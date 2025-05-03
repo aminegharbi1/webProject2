@@ -1,0 +1,158 @@
+html, body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  .btn-femme {
+    text-align: center;
+  }
+  .btn-homme {
+    text-align: center;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a09d9d;
+    padding: 20px;
+    box-shadow: 0 1px 3px -2px black;
+    height: 70px;
+  }
+  
+  .nav-logo img {
+    height: 80px;
+  }
+  .nav-logo{
+    display: flex;
+    align-items: center;
+  }
+  .nav-logo h1{
+    font-size: 38px;
+    font-weight: 550;
+  }
+  .nav-ul ul {
+    list-style: none;
+    display: flex;
+    gap: 90px;
+    font-size: 20px;
+    font-weight: 600;
+    
+  }
+  
+  .nav-ul a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav-panier img {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 90%;
+    margin-top: 50px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .card .img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+  }
+  .footer {
+    padding: 40px 20px;
+  }
+  
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .footer-logo img {
+    height: 50px;
+  }
+  
+  .footer-logo p {
+    font-size: 40px;
+    font-weight: bold;
+    color: grey;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 40px;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    cursor: pointer;
+  }
+  
+  .footer-social-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+  }
+  
+  .footer-icons-container img {
+    height: 50px;
+  }
+  
+  .hr1 hr {
+    margin: 30px auto;
+    width: 80%;
+    border: 0.5px solid #ccc;
+  }
+  
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    background-color: #e5e5e5;
+    padding: 30px;
+  }
+  
+  .footer-info h3 {
+    font-weight: bold;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .new-product{
+    text-align: center;
+    size: 39px;
+    font-weight: 700;
+
+  }
+  

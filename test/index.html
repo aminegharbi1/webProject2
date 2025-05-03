@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 90%;
+      margin-top: 50px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .card .img img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img">
+            <img src="../assets/imgf1.jpg" alt="Image 1" draggable="false">
+          </div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf2.jpg" alt="Image 2" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf3.jpg" alt="Image 3" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf4.jpg" alt="Image 4" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf5jpg.jpg" alt="Image 5" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf6.jpg" alt="Image 6" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf7.jpg" alt="Image 7" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgf8.jpg" alt="Image 8" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Swiper Initialization -->
+  <script>
+    // Function to determine the scroll direction based on screen width
+    function getDirection() {
+      // If the screen width is 760px or less, return 'vertical'
+      // Else, return 'horizontal'
+      return window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+    }
+  
+    // Initialize a new Swiper instance
+    var swiper = new Swiper('.swiper', {
+      // Number of slides visible at the same time
+      slidesPerView: 3,
+  
+      // Space in pixels between each slide
+      spaceBetween: 50,
+  
+      // Set direction (horizontal or vertical) depending on screen width
+      direction: getDirection(),
+  
+      // Enable navigation buttons
+      navigation: {
+        nextEl: '.swiper-button-next', // Selector for the "Next" button
+        prevEl: '.swiper-button-prev', // Selector for the "Previous" button
+      },
+  
+      // Event listeners
+      on: {
+        // When the window is resized
+        resize: function () {
+          // Change the swiper direction based on new screen width
+          swiper.changeDirection(getDirection());
+        },
+      },
+    });
+  </script>
+  
+
+</body>
+</html>
