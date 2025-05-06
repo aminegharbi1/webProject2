@@ -1,151 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <title>Swiper Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
-    html, body {
-      position: relative;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription à la plateforme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      :root {
+    --clr-dark: #232228;
+    --clr-red: #a63d2a;
+    --clr-blue-light: #3498db;
+    --clr-blue-dark: #2980b9;
+}
 
-    .swiper {
-      width: 100%;
-      height: 90%;
-      margin-top: 50px;
-    }
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--clr-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+}
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.3) 0%, rgba(52, 152, 219, 0) 70%);
+    filter: blur(30px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.8;
+    animation: pulse 6s infinite alternate;
+}
 
-    .card .img img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      max-height: 400px;
-    }
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
+}
 
+.container {
+    background: rgba(35, 34, 40, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin: 20px; 
+    padding: 30px 20px;
+}
 
-  </style>
+.container::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 17px;
+    background: linear-gradient(135deg, 
+        rgba(52, 152, 219, 0.3) 0%, 
+        rgba(52, 152, 219, 0) 50%,
+        rgba(52, 152, 219, 0.3) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--clr-blue-light);
+    border-radius: 3px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--clr-blue-light);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.radio-option, .checkbox-option {
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input, .checkbox-option input {
+    margin-right: 10px;
+}
+
+.radio-option label, .checkbox-option label {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+    cursor: pointer;
+}
+
+button {
+    background: linear-gradient(135deg, var(--clr-blue-light) 0%, var(--clr-blue-dark) 100%);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(41, 128, 185, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 45%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 55%
+    );
+    transform: rotate(30deg);
+    transition: all 0.3s;
+}
+
+button:hover::after {
+    left: 100%;
+}
+
+.interests {
+    margin-top: 5px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+input[type="radio"]:checked {
+    border-color: var(--clr-blue-light);
+    background-color: transparent;
+}
+
+input[type="checkbox"]:checked {
+    border-color: var(--clr-blue-light);
+    background-color: var(--clr-blue-light);
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--clr-blue-light);
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 0;
+    left: 2px;
+}
+@media (max-height: 700px) {
+    body {
+        align-items: flex-start;
+        padding: 20px 0;
+  }
+}
+
+    </style>
 </head>
 <body>
-
-  <!-- Swiper -->
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img">
-            <img src="../assets/imgf1.jpg" alt="Image 1" draggable="false">
-          </div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf2.jpg" alt="Image 2" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf3.jpg" alt="Image 3" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf4.jpg" alt="Image 4" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf5jpg.jpg" alt="Image 5" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf6.jpg" alt="Image 6" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf7.jpg" alt="Image 7" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img"><img src="../assets/imgf8.jpg" alt="Image 8" draggable="false"></div>
-          <h4>Price : 30$</h4>
-        </div>
-      </div>
+    <div class="container">
+        <h1>Inscription à la plateforme</h1>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label>Genre :</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="homme" name="genre" value="homme" checked>
+                        <label for="homme">Homme</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="femme" name="genre" value="femme">
+                        <label for="femme">Femme</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Centres d'intérêt :</label>
+                <div class="checkbox-group interests">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="informatique" name="interests" value="informatique">
+                        <label for="informatique">Informatique</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="sport" name="interests" value="sport">
+                        <label for="sport">Sport</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">S'inscrire</button>
+        </form>
     </div>
-
-    <!-- Navigation buttons -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Swiper Initialization -->
-  <script>
-    // Function to determine the scroll direction based on screen width
-    function getDirection() {
-      // If the screen width is 760px or less, return 'vertical'
-      // Else, return 'horizontal'
-      return window.innerWidth <= 760 ? 'vertical' : 'horizontal';
-    }
-  
-    // Initialize a new Swiper instance
-    var swiper = new Swiper('.swiper', {
-      // Number of slides visible at the same time
-      slidesPerView: 3,
-  
-      // Space in pixels between each slide
-      spaceBetween: 50,
-  
-      // Set direction (horizontal or vertical) depending on screen width
-      direction: getDirection(),
-  
-      // Enable navigation buttons
-      navigation: {
-        nextEl: '.swiper-button-next', // Selector for the "Next" button
-        prevEl: '.swiper-button-prev', // Selector for the "Previous" button
-      },
-  
-      // Event listeners
-      on: {
-        // When the window is resized
-        resize: function () {
-          // Change the swiper direction based on new screen width
-          swiper.changeDirection(getDirection());
-        },
-      },
-    });
-  </script>
-  
-
 </body>
 </html>

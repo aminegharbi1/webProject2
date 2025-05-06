@@ -4,45 +4,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="swipe.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="nav-bar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="homme.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Document</title>
 </head>
 
 <body>
-  
-  <div class="nav-bar">
-    <div class="nav-logo">
-      <img src="./assets/2-removebg-preview.png" alt="Shopper Logo" />
-      <h1>SHOOPER</h1>
+    <div class="nav-bar">
+      <div class="nav-logo">
+        <img src="./assets/2-removebg-preview.png" alt="Shopper Logo" />
+        <h1>SHOOPER</h1>
+      </div>
+      <div class="nav-ul">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#new-product">New Product</a></li>
+          <li><a href="#promotion">Promotion</a></li>
+        </ul>
+      </div>
+      <div class="search-bar">
+        <form action="">
+          <input type="search" placeholder="Search here …" />
+          <i class="fa fa-search"></i>
+        </form>
+      </div>
+      <div class="nav-panier">
+        <a href="#"><img src="./assets/1332655.png" alt="Panier" /></a>
+      </div>
     </div>
-    <div class="nav-ul">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">New Product</a></li>
-        <li><a href="#">Promotion</a></li>
-      </ul>
-    </div>
-    <div class="search-bar">
-      <form action="">
-        <input type="search" placeholder="Search here …" />
-        <i class="fa fa-search"></i>
-      </form>
-    </div>
-    <div class="nav-panier">
-      <a href="#"><img src="./assets/1332655.png" alt="Panier" /></a>
-    </div>
-  </div>
-  <video width="1250" autoplay muted loop>
-    <source src="./assets/vidh2.mp4" type="video/mp4">
+  <video width="1300" autoplay muted loop>
+    <source src="./assets/vidh1.mp4" type="video/mp4">
   </video>
   <br><br>
-  <h1>New Promotion</h1><br>
+  <h1 align="center" id="new-product">New Promotion</h1>
+
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img">
+            <img src="../assets/imgh1.jpg" alt="Image 1" draggable="false">
+          </div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh2.jpg" alt="Image 2" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh3.jpg" alt="Image 3" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh4.jpg" alt="Image 4" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh5.jpg" alt="Image 5" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh6.jpg" alt="Image 6" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh7.jpg" alt="Image 7" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img"><img src="../assets/imgh8.jpg" alt="Image 8" draggable="false"></div>
+          <h4>Price : 30$</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="swipe.js"></script>
+  <div class="promotion-homme" id="promotion">
+    <h1 align="center">Promotion</h1>
+  </div>
+
+  <div class="all-product">
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh1.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh2.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh3.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh4.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh5.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh6.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh7.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/assets/imgh8.jpg" alt="">
+      </div>
+      <div class="price-product">
+        <p>Name: Denim Dreams. Blue Threads.</p>
+        <h1>Price : 30$</h1>
+      </div>
+    </div>
+
+  </div>
 
   <div class="footer">
     <div class="footer-logo">
-      <img src="./assets/logo.png" alt="Shopper Logo" />
+      <img src="./assets/2-removebg-preview.png" alt="Shopper Logo" />
       <p>SHOPPER</p>
     </div>
 
