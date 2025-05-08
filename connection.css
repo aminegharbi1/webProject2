@@ -1,100 +1,130 @@
-/* home.css */
+:root {
+    --clr-dark: #232228;
+    --clr-red: #a63d2a;
+    --clr-blue-light: #434546;
+    --clr-blue-dark: #282829;
+}
 
-/* Corps de la page */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  /* En-tête principal */
-  .hero {
-    background-image: url('./assets/hero-image.jpg');
-    background-size: cover;
-    background-position: center;
+
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    filter: blur(30px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.8;
+    animation: pulse 6s infinite alternate;
+}
+
+
+.container {
+    background: rgba(35, 34, 40, 0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.container h1 {
     color: white;
     text-align: center;
-    padding: 100px 20px;
-  }
-  
-  .hero h1 {
-    font-size: 3em;
-    margin: 0;
-  }
-  
-  .hero .buttons {
-    margin-top: 20px;
-  }
-  
-  .hero .btn {
-    background-color: #ff6347;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 5px;
-    font-size: 1.2em;
-  }
-  
-  .hero .btn:hover {
-    background-color: #e5533d;
-  }
-  
-  /* Section des catégories */
-  .categories {
-    padding: 50px 20px;
-    background-color: #fff;
-  }
-  
-  .categories .section-title {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .categories .row {
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--clr-blue-light);
+    border-radius: 3px;
+}
+
+.form-group {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 20px;
-  }
-  
-  .categories .column {
-    width: 23%;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .categories .column strong {
-    font-size: 1.2em;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .categories .column a {
-    color: #333;
-    text-decoration: none;
-    font-size: 1em;
-  }
-  
-  .categories .btn-femme, .categories .btn-homme {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .categories .btn-outline-secondary {
-    background-color: transparent;
-    border: 2px solid #ff6347;
-    color: #ff6347;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-  }
-  
-  .categories .btn-outline-secondary:hover {
-    background-color: #ff6347;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     color: white;
-  }
-  
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--clr-blue-light);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, var(--clr-blue-light), var(--clr-blue-dark));
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+input[type="radio"]:checked {
+    border-color: var(--clr-blue-light);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--clr-blue-light);
+    color: white;
+}

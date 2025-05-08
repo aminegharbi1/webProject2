@@ -1,4 +1,4 @@
-form {
+  .search-bar form {
     width: 50px;
     height: 50px;
     background: white;
@@ -9,7 +9,7 @@ form {
     position: relative;
     transition: all 1s;
   }
-  input {
+  .search-bar input {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,16 +37,16 @@ form {
     font-size: 1.2em;
     transition: all 1s;
   }
-  form:hover {
+  .search-bar form:hover {
     width: 200px;
     cursor: pointer;
   }
   
-  form:hover input {
+  .search-bar form:hover input {
     display: block;
   }
   
-  form:hover .fa {
+  .search-bar form:hover .fa {
     background: #07051a;
     color: white;
   }
